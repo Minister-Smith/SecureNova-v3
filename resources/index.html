@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学习资源 | SecureNova</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/resources.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>SecureNova</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../learning-path/index.html">学习路径</a></li>
+                <li><a href="../lab-environment/index.html">实验环境</a></li>
+                <li><a href="../challenges/index.html">挑战题目</a></li>
+                <li><a href="../resources/index.html" class="active">学习资源</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="content-section">
+        <h2><i class="fas fa-book-open"></i> 学习资源</h2>
+
+        <div class="resource-tabs">
+            <button class="resource-tab active" data-resource-tab="books"><i class="fas fa-book"></i>
+                推荐书籍</button>
+            <button class="resource-tab" data-resource-tab="online"><i class="fas fa-video"></i>
+                在线平台</button>
+            <button class="resource-tab" data-resource-tab="labs"><i class="fas fa-target"></i> 靶场平台</button>
+            <button class="resource-tab" data-resource-tab="ctf"><i class="fas fa-flag"></i> CTF平台</button>
+            <button class="resource-tab" data-resource-tab="community"><i class="fas fa-users"></i>
+                社区论坛</button>
+            <button class="resource-tab" data-resource-tab="tools"><i class="fas fa-tools"></i> 工具资源</button>
+        </div>
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab-books">
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-file-text"></i> 《计算机网络：自顶向下方法》</a>
+                        <p class="description">经典计算机网络教材，从应用层到物理层逐层讲解</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-file-text"></i> 《Linux命令行与Shell脚本编程大全》</a>
+                        <p class="description">Linux命令行和Shell编程的全面指南</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-file-text"></i> 《Web安全深度剖析》</a>
+                        <p class="description">深入剖析Web安全漏洞原理与防御</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-file-text"></i> 《白帽子讲Web安全》</a>
+                        <p class="description">国内Web安全领域的经典著作</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-file-text"></i> 《黑客攻防技术宝典》</a>
+                        <p class="description">涵盖多种攻击技术的实战指南</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-file-text"></i> 《Metasploit渗透测试指南》</a>
+                        <p class="description">Metasploit框架的权威指南</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-online">
+                <div class="resource-list">
+
+                    <div class="resource-item">
+                        <a href="https://www.bilibili.com/video/BV1Tyw9e8EXz/?share_source=copy_web&vd_source=d681ac9bc25943fc3029b33cd2d645b2"
+                            target="_blank" rel="noopener noreferrer">
+                            <i class="fas fa-video"></i> B站 - 网络安全教程
+                        </a>
+                        <p class="description">丰富的网络安全教学视频资源</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-video"></i> 菜鸟教程 - Web基础</a>
+                        <p class="description">从零开始学习Web开发基础</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-video"></i> W3School - HTML/CSS/JS</a>
+                        <p class="description">最权威的Web技术学习平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-video"></i> Hack The Box</a>
+                        <p class="description">知名的在线渗透测试靶场</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-video"></i> TryHackMe</a>
+                        <p class="description">面向初学者的安全学习平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-video"></i> PortSwigger - Web安全学院</a>
+                        <p class="description">专业的Web安全学习平台</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-labs">
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-crosshairs"></i> DVWA</a>
+                        <p class="description">Damn Vulnerable Web App，经典Web漏洞练习平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-crosshairs"></i> Pikachu</a>
+                        <p class="description">中文漏洞练习平台，适合初学者</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-crosshairs"></i> UploadLabs</a>
+                        <p class="description">专注于文件上传漏洞的练习靶场</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-crosshairs"></i> SQLiLabs</a>
+                        <p class="description">专门练习SQL注入的靶场</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-crosshairs"></i> VulHub</a>
+                        <p class="description">基于Docker的漏洞环境集合</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-crosshairs"></i> CTFHub</a>
+                        <p class="description">CTF入门练习平台</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-ctf">
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-trophy"></i> BUUCTF</a>
+                        <p class="description">国内知名CTF平台，题目丰富</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-trophy"></i> CTFHub</a>
+                        <p class="description">CTF学习和练习平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-trophy"></i> 攻防世界</a>
+                        <p class="description">国内安全竞赛平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-trophy"></i> HackerOne</a>
+                        <p class="description">全球知名漏洞赏金平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-trophy"></i> Bugcrowd</a>
+                        <p class="description">漏洞报告和赏金平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-trophy"></i> Codeforces</a>
+                        <p class="description">国际知名编程竞赛平台</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-community">
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-users"></i> 先知社区</a>
+                        <p class="description">国内领先的安全技术社区</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-users"></i> FreeBuf</a>
+                        <p class="description">安全资讯和技术分享平台</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-users"></i> 安全客</a>
+                        <p class="description">安全知识分享社区</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-users"></i> GitHub - Awesome Security</a>
+                        <p class="description">精选的安全资源合集</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-users"></i> Reddit - r/netsec</a>
+                        <p class="description">国际安全社区讨论区</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-users"></i> 安全牛</a>
+                        <p class="description">安全培训和资讯平台</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab-tools">
+                <div class="resource-list">
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-wrench"></i> Nmap</a>
+                        <p class="description">强大的端口扫描工具</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-wrench"></i> BurpSuite</a>
+                        <p class="description">Web安全测试神器</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-wrench"></i> Metasploit</a>
+                        <p class="description">渗透测试框架</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-wrench"></i> Wireshark</a>
+                        <p class="description">网络抓包分析工具</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-wrench"></i> SQLmap</a>
+                        <p class="description">自动化SQL注入工具</p>
+                    </div>
+                    <div class="resource-item">
+                        <a href="#"><i class="fas fa-wrench"></i> Hydra</a>
+                        <p class="description">密码爆破工具</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="tip-card">
+            <h3><i class="fas fa-lightbulb"></i> 学习建议</h3>
+            <ul>
+                <li><strong>不要跳步：</strong>你跳过的每个基础，都会在某个漏洞利用时卡住你</li>
+                <li><strong>不要只背payload：</strong>理解原理比记住命令重要100倍</li>
+                <li><strong>不要怕犯错：</strong>在虚拟环境里炸了系统就恢复快照，比在生产环境犯错强一万倍</li>
+                <li><strong>多实践：</strong>理论知识需要通过实践来巩固，多做实验和CTF题目</li>
+                <li><strong>记录学习：</strong>写技术博客、记录WriteUp，有助于加深理解和回顾</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../learning-path/index.html">学习路径</a></li>
+                    <li><a href="../lab-environment/index.html">实验环境</a></li>
+                    <li><a href="../challenges/index.html">挑战题目</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="../resources/index.html">推荐书籍</a></li>
+                    <li><a href="../resources/index.html">在线平台</a></li>
+                    <li><a href="../resources/index.html">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：ms3079266256@outlook.com</li>
+                    <li>QQ：1047683038</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SecureNova. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+</body>
+
+</html>

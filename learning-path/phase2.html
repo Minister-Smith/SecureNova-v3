@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第二阶段：计算机网络 | SecureNova</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/phase-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>SecureNova</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../learning-path/index.html" class="active">学习路径</a></li>
+                <li><a href="../lab-environment/index.html">实验环境</a></li>
+                <li><a href="../challenges/index.html">挑战题目</a></li>
+                <li><a href="../resources/index.html">学习资源</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="phase-nav">
+        <ul>
+            <li><a href="phase1.html">第一阶段</a></li>
+            <li><a href="phase2.html" class="active-phase">第二阶段</a></li>
+            <li><a href="phase3.html">第三阶段</a></li>
+            <li><a href="phase4.html">第四阶段</a></li>
+            <li><a href="phase5.html">第五阶段</a></li>
+            <li><a href="phase6.html">第六阶段</a></li>
+            <li><a href="phase7.html">第七阶段</a></li>
+        </ul>
+    </div>
+
+    <section class="content-section">
+        <div class="content-card">
+            <div class="phase-header">
+                <h3><i class="fas fa-network-wired"></i> 第二阶段：计算机网络</h3>
+                <span class="phase-number">Phase 02</span>
+            </div>
+            <p class="phase-summary">目标：深入理解网络协议栈，掌握抓包分析技能</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-layer-group"></i> OSI七层模型 vs TCP/IP四层模型</h4>
+            <div class="model-grid">
+                <div class="model-card">
+                    <h5>OSI七层模型</h5>
+                    <div class="layer-item"><strong>7. 应用层</strong><div class="desc">HTTP、FTP、DNS、SMTP</div></div>
+                    <div class="layer-item"><strong>6. 表示层</strong><div class="desc">数据加密、压缩、编码</div></div>
+                    <div class="layer-item"><strong>5. 会话层</strong><div class="desc">建立、管理会话</div></div>
+                    <div class="layer-item"><strong>4. 传输层</strong><div class="desc">TCP、UDP</div></div>
+                    <div class="layer-item"><strong>3. 网络层</strong><div class="desc">IP、路由</div></div>
+                    <div class="layer-item"><strong>2. 数据链路层</strong><div class="desc">以太网、MAC</div></div>
+                    <div class="layer-item"><strong>1. 物理层</strong><div class="desc">网线、光纤</div></div>
+                </div>
+                <div class="model-card">
+                    <h5>TCP/IP四层模型</h5>
+                    <div class="layer-item"><strong>4. 应用层</strong><div class="desc">HTTP、FTP、DNS（对应OSI 5-7层）</div></div>
+                    <div class="layer-item"><strong>3. 传输层</strong><div class="desc">TCP、UDP</div></div>
+                    <div class="layer-item"><strong>2. 网际层</strong><div class="desc">IP、ICMP、ARP</div></div>
+                    <div class="layer-item"><strong>1. 网络接口层</strong><div class="desc">以太网、PPP</div></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-exchange-alt"></i> 以太网与ARP协议</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>以太网帧结构</strong>
+                    <div class="description">目的MAC + 源MAC + 类型 + 数据 + FCS</div>
+                </div>
+                <div class="command-item">
+                    <strong>MAC地址</strong>
+                    <div class="description">48位物理地址，网卡唯一标识</div>
+                </div>
+                <div class="command-item">
+                    <strong>ARP协议</strong>
+                    <div class="description">地址解析协议，IP→MAC映射</div>
+                </div>
+                <div class="command-item">
+                    <strong>ARP缓存</strong>
+                    <div class="description">存储IP与MAC的对应关系</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-globe"></i> IP协议详解</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>IP头结构</strong>
+                    <div class="description">版本(4位) + IHL(4位) + TOS(8位) + 总长度(16位)</div>
+                </div>
+                <div class="command-item">
+                    <strong>IP分片</strong>
+                    <div class="description">当数据包超过MTU时进行分片传输</div>
+                </div>
+                <div class="command-item">
+                    <strong>TTL</strong>
+                    <div class="description">生存时间，防止数据包无限循环</div>
+                </div>
+                <div class="command-item">
+                    <strong>路由原理</strong>
+                    <div class="description">路由器根据路由表选择最佳路径转发数据包</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-paper-plane"></i> ICMP协议</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>ping命令原理</strong>
+                    <div class="description">发送ICMP Echo Request，接收Echo Reply</div>
+                    <div class="example">用于测试网络连通性和延迟</div>
+                </div>
+                <div class="command-item">
+                    <strong>traceroute原理</strong>
+                    <div class="description">通过递增TTL值追踪数据包路径</div>
+                    <div class="example">每个路由器返回ICMP超时消息</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-handshake"></i> TCP协议详解</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>三次握手</strong>
+                    <div class="description">SYN → SYN+ACK → ACK</div>
+                </div>
+                <div class="command-item">
+                    <strong>四次挥手</strong>
+                    <div class="description">FIN → ACK → FIN → ACK</div>
+                </div>
+                <div class="command-item">
+                    <strong>流量控制</strong>
+                    <div class="description">滑动窗口机制，防止发送过快</div>
+                </div>
+                <div class="command-item">
+                    <strong>拥塞控制</strong>
+                    <div class="description">慢启动、拥塞避免、快速重传</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-bolt"></i> UDP协议</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>无连接</strong>
+                    <div class="description">不需要建立连接，直接发送</div>
+                </div>
+                <div class="command-item">
+                    <strong>不可靠</strong>
+                    <div class="description">不保证数据到达，无重传机制</div>
+                </div>
+                <div class="command-item">
+                    <strong>低延迟</strong>
+                    <div class="description">适合实时应用：视频、语音、游戏</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-search"></i> DNS协议</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>解析流程</strong>
+                    <div class="description">浏览器→本地DNS→根DNS→顶级DNS→权威DNS</div>
+                </div>
+                <div class="command-item">
+                    <strong>递归查询</strong>
+                    <div class="description">DNS服务器负责查询直到得到结果</div>
+                </div>
+                <div class="command-item">
+                    <strong>迭代查询</strong>
+                    <div class="description">DNS服务器返回下一个服务器地址</div>
+                </div>
+                <div class="command-item">
+                    <strong>DNS缓存</strong>
+                    <div class="description">减少重复查询，提高效率</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-wifi"></i> Wireshark抓包分析</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>捕获过滤器</strong>
+                    <div class="description">tcp port 80, ip host 192.168.1.1</div>
+                </div>
+                <div class="command-item">
+                    <strong>显示过滤器</strong>
+                    <div class="description">http.request, tcp.flags.syn</div>
+                </div>
+                <div class="command-item">
+                    <strong>追踪TCP流</strong>
+                    <div class="description">右键→Follow→TCP Stream</div>
+                </div>
+                <div class="command-item">
+                    <strong>常见协议分析</strong>
+                    <div class="description">HTTP、DNS、TCP、UDP、ARP</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../learning-path/index.html">学习路径</a></li>
+                    <li><a href="../lab-environment/index.html">实验环境</a></li>
+                    <li><a href="../challenges/index.html">挑战题目</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="../resources/index.html">推荐书籍</a></li>
+                    <li><a href="../resources/index.html">在线平台</a></li>
+                    <li><a href="../resources/index.html">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：ms3079266256@outlook.com</li>
+                    <li>QQ：1047683038</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SecureNova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

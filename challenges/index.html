@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>挑战题目 | SecureNova</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/challenges.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>SecureNova</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../learning-path/index.html">学习路径</a></li>
+                <li><a href="../lab-environment/index.html">实验环境</a></li>
+                <li><a href="../challenges/index.html" class="active">挑战题目</a></li>
+                <li><a href="../resources/index.html">学习资源</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <section class="content-section">
+        <h2>挑战题目</h2>
+        
+        <div class="challenge-grid">
+            <div class="challenge-card">
+                <span class="difficulty easy">Easy</span>
+                <h3>SQL注入入门</h3>
+                <p>尝试通过SQL注入获取数据库中的敏感信息</p>
+                <div class="tags">
+                    <span class="tag">SQL注入</span>
+                    <span class="tag">基础</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="sql-injection">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty easy">Easy</span>
+                <h3>XSS反射型</h3>
+                <p>构造一个XSS payload来弹出警告框</p>
+                <div class="tags">
+                    <span class="tag">XSS</span>
+                    <span class="tag">前端</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="xss-reflection">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty medium">Medium</span>
+                <h3>文件上传绕过</h3>
+                <p>绕过前端和后端的文件上传限制</p>
+                <div class="tags">
+                    <span class="tag">文件上传</span>
+                    <span class="tag">绕过</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="upload-bypass">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty medium">Medium</span>
+                <h3>盲注挑战</h3>
+                <p>在没有回显的情况下进行SQL盲注</p>
+                <div class="tags">
+                    <span class="tag">SQL注入</span>
+                    <span class="tag">盲注</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="blind-sqli">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty medium">Medium</span>
+                <h3>CSRF攻击</h3>
+                <p>构造一个CSRF攻击payload</p>
+                <div class="tags">
+                    <span class="tag">CSRF</span>
+                    <span class="tag">认证</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="csrf">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty hard">Hard</span>
+                <h3>SSRF进阶</h3>
+                <p>利用SSRF漏洞访问内部服务</p>
+                <div class="tags">
+                    <span class="tag">SSRF</span>
+                    <span class="tag">内网</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="ssrf">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty hard">Hard</span>
+                <h3>XXE漏洞</h3>
+                <p>利用XXE漏洞读取服务器上的敏感文件</p>
+                <div class="tags">
+                    <span class="tag">XXE</span>
+                    <span class="tag">XML</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="xxe">开始挑战</a>
+            </div>
+            
+            <div class="challenge-card">
+                <span class="difficulty hard">Hard</span>
+                <h3>命令注入</h3>
+                <p>通过命令注入获取服务器shell</p>
+                <div class="tags">
+                    <span class="tag">命令注入</span>
+                    <span class="tag">RCE</span>
+                </div>
+                <a href="#" class="btn btn-secondary challenge-launch" data-challenge="command-injection">开始挑战</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="challenge-detail-overlay hidden" id="challengeModal">
+        <div class="challenge-detail-panel">
+            <button class="modal-close" id="closeChallengeBtn" aria-label="关闭挑战">×</button>
+            <div class="challenge-detail-header">
+                <span class="difficulty" id="challengeDifficulty"></span>
+                <h2 id="challengeTitle"></h2>
+                <p id="challengeDescription"></p>
+            </div>
+            <div class="challenge-detail-body">
+                <div id="challengeInstructions"></div>
+                <div class="challenge-task-area" id="challengeTaskArea"></div>
+                <div class="challenge-actions">
+                    <button class="btn btn-primary" id="submitChallengeBtn">提交解答</button>
+                    <button class="btn btn-secondary" id="showHintBtn">查看提示</button>
+                    <button class="btn btn-secondary" id="showSolutionBtn">显示答案</button>
+                </div>
+                <div class="challenge-result" id="challengeResult"></div>
+                <div class="challenge-hint hidden" id="challengeHint"></div>
+                <div class="challenge-solution hidden" id="challengeSolution"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../learning-path/index.html">学习路径</a></li>
+                    <li><a href="../lab-environment/index.html">实验环境</a></li>
+                    <li><a href="../challenges/index.html">挑战题目</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="../resources/index.html">推荐书籍</a></li>
+                    <li><a href="../resources/index.html">在线平台</a></li>
+                    <li><a href="../resources/index.html">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：ms3079266256@outlook.com</li>
+                    <li>QQ：1047683038</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SecureNova. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="../script.js"></script>
+    <script src="../scripts/challenges.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+.content-section {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 6rem 5% 3rem;
+}
+
+.content-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    background: linear-gradient(90deg, #00ff88, #00f0ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 2rem;
+}
+
+.resource-tabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #00f0ff33;
+    padding-bottom: 1rem;
+}
+
+.resource-tab {
+    padding: 0.75rem 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #00f0ff33;
+    border-radius: 8px;
+    color: #888;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.resource-tab.active {
+    background: rgba(0, 240, 255, 0.2);
+    border-color: #00f0ff;
+    color: #00f0ff;
+}
+
+.resource-tab:hover {
+    border-color: #00ff88;
+    color: #00ff88;
+}
+
+.tab-content {
+    background: rgba(20, 20, 35, 0.95);
+    border: 1px solid #00f0ff33;
+    border-radius: 12px;
+    padding: 1.5rem;
+    min-height: 300px;
+}
+
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.resource-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.resource-item {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s;
+}
+
+.resource-item:hover {
+    background: rgba(0, 240, 255, 0.1);
+    transform: translateX(5px);
+}
+
+.resource-item a {
+    color: #00f0ff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.resource-item a:hover {
+    color: #00ff88;
+}
+
+.resource-item i {
+    width: 20px;
+    text-align: center;
+    color: #00ff88;
+}
+
+.description {
+    color: #888;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    padding-left: 28px;
+}
+
+.tip-card {
+    background: rgba(0, 240, 255, 0.1);
+    border-left: 3px solid #00f0ff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 2rem;
+}
+
+.tip-card h3 {
+    color: #00f0ff;
+    margin: 0 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.tip-card ul {
+    color: #aaa;
+    margin: 0;
+    padding-left: 1.5rem;
+}
+
+.tip-card li {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.tip-card strong {
+    color: #00ff88;
+}
+
+@media (max-width: 700px) {
+    .resource-list {
+        grid-template-columns: 1fr;
+    }
+}

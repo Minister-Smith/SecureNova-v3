@@ -1,0 +1,219 @@
+.phase-nav {
+    position: sticky;
+    top: 70px;
+    z-index: 999;
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.3);
+    padding: 0.75rem 5%;
+    margin-bottom: 1.5rem;
+}
+
+.phase-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.phase-nav a {
+    color: #888;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.phase-nav a:hover {
+    color: var(--cyber-blue);
+    background: rgba(0, 240, 255, 0.1);
+}
+
+.phase-nav a.active-phase {
+    color: var(--cyber-blue);
+    background: rgba(0, 240, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);
+}
+
+.knowledge-card {
+    background: rgba(30, 30, 45, 0.6);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.knowledge-card:hover {
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 20px rgba(0, 240, 255, 0.15);
+}
+
+.knowledge-card h4 {
+    color: var(--cyber-green);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.command-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+.command-item,
+.model-card {
+    background: rgba(15, 15, 25, 0.8);
+    border: 1px solid rgba(0, 240, 255, 0.15);
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+.command-item:hover {
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.command-item strong {
+    color: var(--cyber-blue);
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.command-item .description {
+    color: #ccc;
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.command-item .example {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 0.5rem;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.8rem;
+    color: var(--cyber-green);
+    word-break: break-all;
+}
+
+.copy-btn {
+    background: rgba(0, 240, 255, 0.1);
+    border: 1px solid rgba(0, 240, 255, 0.3);
+    color: var(--cyber-blue);
+    padding: 0.3rem 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.copy-btn:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.3);
+}
+
+.copy-btn.copied {
+    background: rgba(0, 255, 100, 0.2);
+    border-color: rgba(0, 255, 100, 0.5);
+    color: var(--cyber-green);
+}
+
+.content-card {
+    background: rgba(25, 25, 40, 0.8);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.content-card h3 {
+    color: var(--cyber-green);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.phase-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.content-card .phase-number {
+    background: rgba(0, 240, 255, 0.15);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--cyber-blue);
+}
+
+.phase-summary {
+    color: #888;
+}
+
+.command-item-spaced {
+    margin-top: 1rem;
+}
+
+.description-small {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}
+
+.model-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+}
+
+.model-card h5 {
+    color: var(--cyber-blue);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.layer-item {
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    background: rgba(0, 0, 0, 0.3);
+    border-left: 3px solid var(--cyber-green);
+}
+
+.layer-item strong {
+    color: var(--cyber-green);
+    font-size: 0.9rem;
+}
+
+.layer-item .desc {
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+    .phase-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+
+    .model-grid {
+        grid-template-columns: 1fr;
+    }
+}

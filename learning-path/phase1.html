@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第一阶段：基础环境与工具 | SecureNova</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/phase-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>SecureNova</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../learning-path/index.html" class="active">学习路径</a></li>
+                <li><a href="../lab-environment/index.html">实验环境</a></li>
+                <li><a href="../challenges/index.html">挑战题目</a></li>
+                <li><a href="../resources/index.html">学习资源</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="phase-nav">
+        <ul>
+            <li><a href="phase1.html" class="active-phase">第一阶段</a></li>
+            <li><a href="phase2.html">第二阶段</a></li>
+            <li><a href="phase3.html">第三阶段</a></li>
+            <li><a href="phase4.html">第四阶段</a></li>
+            <li><a href="phase5.html">第五阶段</a></li>
+            <li><a href="phase6.html">第六阶段</a></li>
+            <li><a href="phase7.html">第七阶段</a></li>
+        </ul>
+    </div>
+
+    <section class="content-section">
+        <div class="content-card">
+            <div class="phase-header">
+                <h3><i class="fas fa-terminal"></i> 第一阶段：基础环境与工具</h3>
+                <span class="phase-number">Phase 01</span>
+            </div>
+            <p class="phase-summary">目标：能熟练操作Linux命令行，理解基本概念</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-folder-open"></i> Linux文件系统结构</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>/</strong>
+                    <div class="description">根目录，所有文件和目录的起点</div>
+                    <div class="example">系统的最顶层目录</div>
+                </div>
+                <div class="command-item">
+                    <strong>/home</strong>
+                    <div class="description">用户主目录，存放个人文件</div>
+                    <div class="example">/home/user/</div>
+                </div>
+                <div class="command-item">
+                    <strong>/etc</strong>
+                    <div class="description">系统配置文件目录</div>
+                    <div class="example">/etc/passwd, /etc/hosts</div>
+                </div>
+                <div class="command-item">
+                    <strong>/var</strong>
+                    <div class="description">可变数据，如日志、缓存</div>
+                    <div class="example">/var/log/</div>
+                </div>
+                <div class="command-item">
+                    <strong>/tmp</strong>
+                    <div class="description">临时文件目录，重启后清空</div>
+                    <div class="example">/tmp/temp.txt</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-file"></i> 文件操作命令</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>ls</strong>
+                    <div class="description">列出目录内容 (list)</div>
+                    <div class="example">ls -l</div>
+                    <button class="copy-btn" data-command="ls -l"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>cd</strong>
+                    <div class="description">切换目录 (change directory)</div>
+                    <div class="example">cd /home/user</div>
+                    <button class="copy-btn" data-command="cd /home/user"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>pwd</strong>
+                    <div class="description">显示当前路径 (print working directory)</div>
+                    <div class="example">pwd</div>
+                    <button class="copy-btn" data-command="pwd"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>cp</strong>
+                    <div class="description">复制文件 (copy)</div>
+                    <div class="example">cp file1 file2</div>
+                    <button class="copy-btn" data-command="cp file1 file2"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>mv</strong>
+                    <div class="description">移动/重命名文件 (move)</div>
+                    <div class="example">mv old.txt new.txt</div>
+                    <button class="copy-btn" data-command="mv old.txt new.txt"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>rm</strong>
+                    <div class="description">删除文件 (remove)</div>
+                    <div class="example">rm -rf dir/</div>
+                    <button class="copy-btn" data-command="rm -rf dir/"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>mkdir</strong>
+                    <div class="description">创建目录 (make directory)</div>
+                    <div class="example">mkdir new_folder</div>
+                    <button class="copy-btn" data-command="mkdir new_folder"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>touch</strong>
+                    <div class="description">创建空文件或更新时间戳</div>
+                    <div class="example">touch newfile.txt</div>
+                    <button class="copy-btn" data-command="touch newfile.txt"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-eye"></i> 文件查看命令</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>cat</strong>
+                    <div class="description">查看文件全部内容 (concatenate)</div>
+                    <div class="example">cat /etc/passwd</div>
+                    <button class="copy-btn" data-command="cat /etc/passwd"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>less</strong>
+                    <div class="description">分页查看大文件</div>
+                    <div class="example">less large_file.log</div>
+                    <button class="copy-btn" data-command="less large_file.log"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>head</strong>
+                    <div class="description">查看文件开头部分</div>
+                    <div class="example">head -n 10 file.txt</div>
+                    <button class="copy-btn" data-command="head -n 10 file.txt"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>tail</strong>
+                    <div class="description">查看文件末尾部分</div>
+                    <div class="example">tail -f logfile.log</div>
+                    <button class="copy-btn" data-command="tail -f logfile.log"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>grep</strong>
+                    <div class="description">搜索文件内容 (global regular expression print)</div>
+                    <div class="example">grep "error" log.txt</div>
+                    <button class="copy-btn" data-command="grep \"error\" log.txt"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-lock"></i> 权限管理命令</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>chmod</strong>
+                    <div class="description">修改文件权限 (change mode)</div>
+                    <div class="example">chmod 755 file</div>
+                    <button class="copy-btn" data-command="chmod 755 file"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>chown</strong>
+                    <div class="description">修改文件所有者 (change owner)</div>
+                    <div class="example">chown user:group file</div>
+                    <button class="copy-btn" data-command="chown user:group file"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>chgrp</strong>
+                    <div class="description">修改文件所属组 (change group)</div>
+                    <div class="example">chgrp group file</div>
+                    <button class="copy-btn" data-command="chgrp group file"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+            </div>
+            <div class="command-item command-item-spaced">
+                <strong>权限说明</strong>
+                <div class="description">r(read)=4, w(write)=2, x(execute)=1</div>
+                <div class="description">755 = rwxr-xr-x (所有者全部权限，其他用户读+执行)</div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-cpu"></i> 进程管理命令</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>ps</strong>
+                    <div class="description">查看进程状态 (process status)</div>
+                    <div class="example">ps aux</div>
+                    <button class="copy-btn" data-command="ps aux"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>top</strong>
+                    <div class="description">实时查看进程</div>
+                    <div class="example">top</div>
+                    <button class="copy-btn" data-command="top"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>kill</strong>
+                    <div class="description">终止进程</div>
+                    <div class="example">kill -9 PID</div>
+                    <button class="copy-btn" data-command="kill -9 PID"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>htop</strong>
+                    <div class="description">交互式进程查看器</div>
+                    <div class="example">htop</div>
+                    <button class="copy-btn" data-command="htop"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-network-wired"></i> 网络命令</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>ip</strong>
+                    <div class="description">配置网络接口</div>
+                    <div class="example">ip addr show</div>
+                    <button class="copy-btn" data-command="ip addr show"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>ping</strong>
+                    <div class="description">测试网络连通性</div>
+                    <div class="example">ping www.baidu.com</div>
+                    <button class="copy-btn" data-command="ping www.baidu.com"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>netstat</strong>
+                    <div class="description">查看网络连接</div>
+                    <div class="example">netstat -tlnp</div>
+                    <button class="copy-btn" data-command="netstat -tlnp"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>ss</strong>
+                    <div class="description">查看套接字统计</div>
+                    <div class="example">ss -tlnp</div>
+                    <button class="copy-btn" data-command="ss -tlnp"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>curl</strong>
+                    <div class="description">发送HTTP请求</div>
+                    <div class="example">curl http://example.com</div>
+                    <button class="copy-btn" data-command="curl http://example.com"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-edit"></i> 文本编辑器</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>vim</strong>
+                    <div class="description">强大的命令行编辑器</div>
+                    <div class="example">vim file.txt</div>
+                    <button class="copy-btn" data-command="vim file.txt"><i class="fas fa-copy"></i> 复制</button>
+                    <div class="description description-small">基础操作: i(插入), Esc(退出插入), :wq(保存退出)</div>
+                </div>
+                <div class="command-item">
+                    <strong>nano</strong>
+                    <div class="description">简单易用的编辑器</div>
+                    <div class="example">nano file.txt</div>
+                    <button class="copy-btn" data-command="nano file.txt"><i class="fas fa-copy"></i> 复制</button>
+                    <div class="description description-small">基础操作: Ctrl+O(保存), Ctrl+X(退出)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-download"></i> 包管理命令</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>apt update</strong>
+                    <div class="description">更新软件包列表</div>
+                    <div class="example">sudo apt update</div>
+                    <button class="copy-btn" data-command="sudo apt update"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>apt install</strong>
+                    <div class="description">安装软件包</div>
+                    <div class="example">sudo apt install nginx</div>
+                    <button class="copy-btn" data-command="sudo apt install nginx"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+                <div class="command-item">
+                    <strong>apt remove</strong>
+                    <div class="description">卸载软件包</div>
+                    <div class="example">sudo apt remove nginx</div>
+                    <button class="copy-btn" data-command="sudo apt remove nginx"><i class="fas fa-copy"></i> 复制</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-vmware"></i> 虚拟机与网络基础</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>VMware Workstation</strong>
+                    <div class="description">常用虚拟机软件，支持多种操作系统</div>
+                </div>
+                <div class="command-item">
+                    <strong>VirtualBox</strong>
+                    <div class="description">开源虚拟机软件，免费使用</div>
+                </div>
+                <div class="command-item">
+                    <strong>网络适配器模式</strong>
+                    <div class="description">桥接模式、NAT模式、仅主机模式</div>
+                </div>
+                <div class="command-item">
+                    <strong>子网划分</strong>
+                    <div class="description">IP地址、子网掩码、网关</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../learning-path/index.html">学习路径</a></li>
+                    <li><a href="../lab-environment/index.html">实验环境</a></li>
+                    <li><a href="../challenges/index.html">挑战题目</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="../resources/index.html">推荐书籍</a></li>
+                    <li><a href="../resources/index.html">在线平台</a></li>
+                    <li><a href="../resources/index.html">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：ms3079266256@outlook.com</li>
+                    <li>QQ：1047683038</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SecureNova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+    <script src="../script.js"></script>
+</body>
+</html>

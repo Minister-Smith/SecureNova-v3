@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五阶段：工具与自动化 | SecureNova</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/phase-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>SecureNova</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../learning-path/index.html" class="active">学习路径</a></li>
+                <li><a href="../lab-environment/index.html">实验环境</a></li>
+                <li><a href="../challenges/index.html">挑战题目</a></li>
+                <li><a href="../resources/index.html">学习资源</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="phase-nav">
+        <ul>
+            <li><a href="phase1.html">第一阶段</a></li>
+            <li><a href="phase2.html">第二阶段</a></li>
+            <li><a href="phase3.html">第三阶段</a></li>
+            <li><a href="phase4.html">第四阶段</a></li>
+            <li><a href="phase5.html" class="active-phase">第五阶段</a></li>
+            <li><a href="phase6.html">第六阶段</a></li>
+            <li><a href="phase7.html">第七阶段</a></li>
+        </ul>
+    </div>
+
+    <section class="content-section">
+        <div class="content-card">
+            <div class="phase-header">
+                <h3><i class="fas fa-tools"></i> 第五阶段：工具与自动化</h3>
+                <span class="phase-number">Phase 05</span>
+            </div>
+            <p class="phase-summary">目标：掌握安全工具使用及自动化脚本编写</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-search"></i> Nmap扫描工具</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>全端口扫描</strong>
+                    <div class="description">扫描所有65535个端口</div>
+                    <div class="example">nmap -p- target</div>
+                </div>
+                <div class="command-item">
+                    <strong>服务识别</strong>
+                    <div class="description">识别端口上运行的服务</div>
+                    <div class="example">nmap -sV target</div>
+                </div>
+                <div class="command-item">
+                    <strong>NSE脚本</strong>
+                    <div class="description">使用Nmap脚本引擎</div>
+                    <div class="example">nmap --script vuln target</div>
+                </div>
+                <div class="command-item">
+                    <strong>UDP扫描</strong>
+                    <div class="description">扫描UDP端口</div>
+                    <div class="example">nmap -sU target</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-folder-open"></i> 目录爆破工具</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>Dirsearch</strong>
+                    <div class="description">快速目录扫描工具</div>
+                    <div class="example">dirsearch -u http://target</div>
+                </div>
+                <div class="command-item">
+                    <strong>Gobuster</strong>
+                    <div class="description">Go语言编写的目录爆破工具</div>
+                    <div class="example">gobuster dir -u http://target -w wordlist.txt</div>
+                </div>
+                <div class="command-item">
+                    <strong>Wordlist</strong>
+                    <div class="description">常用字典列表</div>
+                    <div class="example">SecLists目录</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-key"></i> 密码爆破工具</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>Hydra</strong>
+                    <div class="description">多协议密码爆破工具</div>
+                    <div class="example">hydra -L users.txt -P pass.txt ssh://target</div>
+                </div>
+                <div class="command-item">
+                    <strong>Medusa</strong>
+                    <div class="description">快速并行密码爆破</div>
+                    <div class="example">medusa -h target -u user -P pass.txt -M ssh</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-database"></i> SQLmap</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>基本扫描</strong>
+                    <div class="description">自动检测并利用SQL注入</div>
+                    <div class="example">sqlmap -u "http://target?id=1"</div>
+                </div>
+                <div class="command-item">
+                    <strong>获取数据库</strong>
+                    <div class="description">列出所有数据库</div>
+                    <div class="example">sqlmap -u "url" --dbs</div>
+                </div>
+                <div class="command-item">
+                    <strong>获取表</strong>
+                    <div class="description">列出指定数据库的表</div>
+                    <div class="example">sqlmap -u "url" -D dbname --tables</div>
+                </div>
+                <div class="command-item">
+                    <strong>获取数据</strong>
+                    <div class="description">导出表中数据</div>
+                    <div class="example">sqlmap -u "url" -D dbname -T users --dump</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-bomb"></i> Metasploit框架</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>启动msfconsole</strong>
+                    <div class="description">启动Metasploit控制台</div>
+                    <div class="example">msfconsole</div>
+                </div>
+                <div class="command-item">
+                    <strong>搜索漏洞</strong>
+                    <div class="description">查找相关漏洞模块</div>
+                    <div class="example">search ms17-010</div>
+                </div>
+                <div class="command-item">
+                    <strong>使用模块</strong>
+                    <div class="description">加载并配置漏洞模块</div>
+                    <div class="example">use exploit/windows/smb/ms17_010_eternalblue</div>
+                </div>
+                <div class="command-item">
+                    <strong>设置参数</strong>
+                    <div class="description">配置目标IP等参数</div>
+                    <div class="example">set RHOSTS target_ip</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fab fa-python"></i> Python脚本编写</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>requests库</strong>
+                    <div class="description">发送HTTP请求</div>
+                    <div class="example">import requests; r = requests.get(url)</div>
+                </div>
+                <div class="command-item">
+                    <strong>re正则表达式</strong>
+                    <div class="description">文本匹配和提取</div>
+                    <div class="example">import re; re.search(pattern, text)</div>
+                </div>
+                <div class="command-item">
+                    <strong>subprocess模块</strong>
+                    <div class="description">执行系统命令</div>
+                    <div class="example">subprocess.run(['ls', '-l'])</div>
+                </div>
+                <div class="command-item">
+                    <strong>paramiko</strong>
+                    <div class="description">SSH连接</div>
+                    <div class="example">SSH客户端库</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-terminal"></i> Shell脚本</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>变量定义</strong>
+                    <div class="description">VAR="value"</div>
+                </div>
+                <div class="command-item">
+                    <strong>条件判断</strong>
+                    <div class="description">if [ condition ]; then ... fi</div>
+                </div>
+                <div class="command-item">
+                    <strong>循环</strong>
+                    <div class="description">for i in $(seq 1 10); do ... done</div>
+                </div>
+                <div class="command-item">
+                    <strong>函数</strong>
+                    <div class="description">function name() { ... }</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../learning-path/index.html">学习路径</a></li>
+                    <li><a href="../lab-environment/index.html">实验环境</a></li>
+                    <li><a href="../challenges/index.html">挑战题目</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="../resources/index.html">推荐书籍</a></li>
+                    <li><a href="../resources/index.html">在线平台</a></li>
+                    <li><a href="../resources/index.html">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：ms3079266256@outlook.com</li>
+                    <li>QQ：1047683038</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SecureNova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>

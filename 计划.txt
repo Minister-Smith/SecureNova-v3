@@ -1,0 +1,148 @@
+网络安全自学路线图（零基础版）
+第一阶段：基础环境与工具
+目标：能熟练操作Linux命令行，理解基本概念
+一、Linux系统入门
+掌握文件系统结构（`/`、`/home`、`/etc`、`/var`、`/tmp`）
+掌握基础命令：
+1.	文件操作：`ls`、`cd`、`pwd`、`cp`、`mv`、`rm`、`mkdir`、`touch`
+2.	文件查看：`cat`、`less`、`head`、`tail`、`grep`
+3.	权限管理：`chmod`、`chown`、`chgrp`
+4.	进程管理：`ps`、`top`、`kill`、`htop`
+5.	网络命令：`ip`、`ping`、`netstat`、`ss`、`curl`
+6.	掌握文本编辑器：`vim`或`nano`（至少会基本操作）
+7.	掌握包管理：`aptupdate`、`aptinstall`、`aptremove`
+二、虚拟机与网络基础
+1.	熟练使用VMware（快照、克隆、网络模式：NAT/桥接/仅主机）
+2.	理解IP地址、子网掩码、网关、DNS
+3.	掌握TCP/UDP基本概念
+4.	完成TCP三次握手/四次挥手的实验（用tcpdump抓包验证）
+检验标准：
+能在Ubuntu上配置静态IP
+能用`scp`在两台虚拟机之间传文件
+能画出TCP三次握手的状态转换图
+第二阶段：计算机网络
+目标：理解网络协议栈，能分析网络流量
+一、网络协议
+1.	OSI七层模型vsTCP/IP四层模型
+2.	以太网帧结构、MAC地址、ARP协议
+3.	IP协议：IP头结构、分片、路由原理
+4.	ICMP协议：ping、traceroute原理
+5.	TCP协议：头结构、序列号、确认号、窗口、流量控制
+6.	UDP协议：头结构、无连接特性
+7.	DNS协议：解析流程、递归/迭代查询
+二、Wireshark抓包分析
+安装Wireshark
+1.	抓取并分析：ARP请求/响应、TCP三次握手、HTTP请求
+2.	使用过滤语法：`ip.src`、`tcp.port`、`http.request.method`
+3.	追踪TCP流、导出HTTP对象
+检验标准：
+能抓包解释为什么网页打不开（DNS失败？TCP握手失败？HTTP404？）
+能用手工构造一个HTTPGET请求包（用`nc`或`telnet`）
+第三阶段：Web基础
+目标：理解Web应用工作原理，能看懂前端代码
+一、HTTP/HTTPS协议
+1.	HTTP请求方法：GET、POST、PUT、DELETE
+2.	HTTP状态码：1xx/2xx/3xx/4xx/5xx
+3.	HTTP头字段：Host、UserAgent、Cookie、Referer、ContentType
+4.	Session与Cookie的区别
+5.	HTTPS原理：SSL/TLS握手、证书验证
+二、前端与后端基础
+1.	HTML基础：常用标签、表单、DOM结构
+2.	JavaScript基础：变量、函数、DOM操作、AJAX
+3.	后端语言选一门（推荐Python）：
+4.	Python基础：数据类型、循环、函数、文件操作
+5.	Flask框架：能写一个简单的登录页面
+6.	数据库基础（SQL）：
+7.	SELECT、INSERT、UPDATE、DELETE
+8.	JOIN子查询、联合查询
+9.	MySQL或SQLite的基本操作
+检验标准：
+能用HTML+CSS+JS写一个简单的登录页面
+能用Python+Flask+SQLite写一个带登录验证的留言板
+能手工执行SQL注入（在靶场里）
+第四阶段：安全入门
+目标：理解常见漏洞原理，能在靶场中复现
+一、Web安全基础
+1.	OWASPTop10逐个学习：
+2.	SQL注入（原理、手工注入、布尔盲注、时间盲注）
+3.	XSS（反射型、存储型、DOM型）
+4.	CSRF（原理、Token防御）
+5.	文件上传（绕过前端验证、MIME类型、扩展名）
+6.	文件包含（本地/远程、日志注入）
+7.	SSRF（内网探测、协议利用）
+8.	XXE（读取文件、内网扫描）
+二、靶场实战
+1.	搭建本地靶场：DVWA、Pikachu、UploadLabs
+2.	每个漏洞从低到高难度全部通关
+3.	使用BurpSuite抓包、重放、爆破
+检验标准：
+能独立完成DVWA所有模块的最高难度
+能用SQLmap自动注入，也能手工注入
+能写一个简单的XSSpayload窃取Cookie
+第五阶段：工具与自动化
+目标：熟练使用主流安全工具，能写简单脚本
+一、扫描与爆破
+1.	Nmap：全端口扫描、服务识别、脚本引擎（NSE）
+2.	Dirsearch/Gobuster：目录爆破
+3.	Hydra/Medit：密码爆破
+4.	SQLmap：参数、绕过WAF技巧
+二、代理与后渗透
+1.	BurpSuite：Proxy、Repeater、Intruder、Decoder、Comparer
+2.	Metasploit：
+3.	漏洞搜索（`search`）
+4.	利用（`use`、`setpayload`）
+5.	Meterpreter基本命令
+6.	Python脚本编写：
+7.	端口扫描脚本
+8.	目录爆破脚本
+9.	简单的XSS检测脚本
+检验标准：
+能用Nmap识别目标操作系统、服务版本
+能用MSF拿下Metasploitable2
+能写Python脚本批量检测某个漏洞
+第六阶段：进阶与实战
+目标：具备渗透测试实战能力，了解安全服务流程
+一、内网渗透
+1.	信息收集（ipconfig、netstat、tasklist）
+2.	权限维持（计划任务、服务、注册表）
+3.	横向移动（PsExec、WMI、SMB）
+4.	域渗透基础（AD域、Kerberos、GoldenTicket）
+二、漏洞挖掘与报告
+学习CVE的披露流程
+在补天、漏洞盒子、HackerOne上提交漏洞
+编写渗透测试报告（含漏洞描述、复现步骤、修复建议）
+三、红队/蓝队基础
+1.	红队：C2框架（CobaltStrike基础）
+2.	蓝队：日志分析（ELK）、IDS/IPS（Suricata）
+3.	参加一场CTF比赛（Web方向或综合方向）
+检验标准：
+能独立完成一台Windows主机的渗透（从扫描到提权）
+能在漏洞平台提交至少一个有效漏洞
+能写一份完整的渗透测试报告
+第七阶段：就业准备
+1.	简历与面试
+2.	整理技术博客/GitHub（记录学习过程、WriteUp）
+3.	准备简历（突出项目经验、靶场经验）
+4.	刷面试题：
+5.	常见漏洞原理与修复
+6.	渗透测试流程
+7.	应急响应步骤
+8.	投递岗位：渗透测试工程师、安全服务工程师、安全研究员
+9.	推荐资源
+书籍
+《计算机网络：自顶向下方法》
+《Linux命令行与Shell脚本编程大全》
+《Web安全深度剖析》
+《白帽子讲Web安全》
+在线平台
+基础：B站、菜鸟教程、W3School
+靶场：DVWA、Pikachu、UploadLabs、SQLiLabs、VulHub
+CTF：Buuctf、CTFHub、攻防世界
+社区
+先知社区
+FreeBuf
+安全客
+GitHub（搜“awesomesecurity”）
+1.不要跳步：你跳过的每个基础，都会在某个漏洞利用时卡住你。
+2.不要只背payload：理解原理比记住命令重要100倍。
+3.不要怕犯错：在虚拟环境里炸了系统就恢复快照，比在生产环境犯错强一万倍。

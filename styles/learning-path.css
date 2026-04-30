@@ -1,0 +1,110 @@
+.phase-card {
+    background: rgba(25, 25, 40, 0.8);
+    border: 1px solid rgba(0, 240, 255, 0.2);
+    border-radius: 12px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    min-height: 140px;
+}
+
+.phase-card:hover {
+    border-color: var(--cyber-blue);
+    box-shadow: 0 0 25px rgba(0, 240, 255, 0.25);
+    transform: translateY(-4px);
+}
+
+.phase-card h3 {
+    color: var(--cyber-green);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.15rem;
+}
+
+.phase-card .phase-num {
+    background: rgba(0, 240, 255, 0.15);
+    padding: 0.3rem 0.85rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--cyber-blue);
+    font-weight: 600;
+}
+
+.phase-card p {
+    color: #aaa;
+    font-size: 0.92rem;
+    line-height: 1.7;
+    flex: 1;
+    margin: 0;
+}
+
+.phase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.phase-nav {
+    background: linear-gradient(135deg, rgba(10, 15, 30, 0.98) 0%, rgba(5, 10, 20, 0.98) 100%);
+    backdrop-filter: blur(25px);
+    border-bottom: 1px solid rgba(0, 240, 255, 0.25);
+    padding: 1rem 5%;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.phase-nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.phase-nav a {
+    color: #888;
+    text-decoration: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.92rem;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 240, 255, 0.1);
+}
+
+.phase-nav a:hover {
+    color: var(--cyber-blue);
+    background: rgba(0, 240, 255, 0.15);
+    border-color: rgba(0, 240, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 240, 255, 0.2);
+}
+
+.learning-path-section {
+    padding: 2rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.learning-path-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.learning-path-subtitle {
+    color: #888;
+    margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+    .phase-grid {
+        grid-template-columns: 1fr;
+    }
+}

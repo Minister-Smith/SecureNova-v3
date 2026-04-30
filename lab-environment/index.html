@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>漏洞实验环境 | SecureNova 安全攻防演练</title>
+    <!-- Font Awesome 6 (免费图标库) -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/lab-environment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="nav-wrapper">
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-shield-virus"></i>
+            <span>SecureNova</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="../learning-path/index.html">学习路径</a></li>
+            <li><a href="../lab-environment/index.html" class="active">实验环境</a></li>
+            <li><a href="../challenges/index.html">挑战题目</a></li>
+            <li><a href="../resources/index.html">学习资源</a></li>
+        </ul>
+    </nav>
+</div>
+
+<div class="content-area">
+    <div class="header">
+        <h1><i class="fas fa-flask"></i> 交互式漏洞演练场</h1>
+        <p>真实场景模拟 · 原理剖析 · 防御实战</p>
+    </div>
+
+    <div class="exp-grid" id="expGrid">
+        <!-- 卡片通过JS动态渲染，保证结构清晰，也可静态保留但动态生成更便于维护 -->
+    </div>
+
+    <!-- 详情面板容器 -->
+    <div class="exp-detail" id="expDetail">
+        <div class="exp-tabs">
+            <button class="exp-tab" data-tab="intro">📖 漏洞原理</button>
+            <button class="exp-tab" data-tab="practice">⚔️ 实战练习</button>
+            <button class="exp-tab" data-tab="fix">🛡️ 安全修复</button>
+            <button class="exp-tab close-tab" id="closeDetailBtn"><i class="fas fa-times"></i> 关闭</button>
+        </div>
+        <div class="exp-tab-content">
+            <div class="tab-pane" id="tab-intro"></div>
+            <div class="tab-pane" id="tab-practice"></div>
+            <div class="tab-pane" id="tab-fix"></div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer">
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>快速链接</h4>
+            <ul><li><a href="../index.html">首页</a></li><li><a href="../learning-path/index.html">学习路径</a></li><li><a href="../lab-environment/index.html">实验环境</a></li></ul>
+        </div>
+        <div class="footer-section"><h4>学习资源</h4><ul><li><a href="../resources/index.html">推荐书籍</a></li><li><a href="../resources/index.html">在线平台</a></li></ul></div>
+        <div class="footer-section"><h4>联系</h4><ul><li>邮箱：lab@securenova.com</li><li>GitHub：SecureNova</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2025 SecureNova — 教育实验环境，请勿用于非法用途</p></div>
+</footer>
+    <script src="../script.js"></script>
+    <script src="../scripts/lab-environment.js"></script>
+</body>
+</html>

